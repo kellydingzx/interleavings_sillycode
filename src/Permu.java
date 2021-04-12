@@ -83,6 +83,5 @@ public class Permu {
         }
         for(Map.Entry entry : ans.entrySet())
             System.out.println(entry);
-
     }
 }
