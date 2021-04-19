@@ -64,6 +64,8 @@ public class Permu {
 
     public static void getResult(ArrayList<String> strs){
         HashMap<String, Integer> ans = new HashMap<>();
+        int a_4 = 0;
+        int a_2 = 0;
         for(int k=0; k< strs.size(); k++) {
             int score = 0;
             ArrayList<String> parts =
@@ -74,9 +76,13 @@ public class Permu {
                 }else if(parts.get(i).equals("3")){
                     score = 200;
                 }else if(parts.get(i).equals("2b")){
-                    score += 10;
+                    score = a_2 + 10;
                 }else if(parts.get(i).equals("4b")){
-                    score -= 20;
+                    score = a_4 - 20;
+                }else if(parts.get(i).equals("4a")) {
+                    a_4 = score;
+                }else if(parts.get(i).equals("2a")) {
+                    a_2 = score;
                 }
             }
             ans.put(strs.get(k), score);
